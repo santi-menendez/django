@@ -16,10 +16,11 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import my_view, my_test_view
+from .views import my_view, my_test_view, CarListView
 
 urlpatterns = [
-    path("listado/", my_view),
+    # path("listado/", my_view),
+    path("listado/", CarListView.as_view()),
     path("detalle/<int:id>", my_test_view),
     path("marcas/<str:brand>", my_view)
 ]
